@@ -1,3 +1,5 @@
-print("Tell me anything")
-anything = input()
-print("Hmm... \"", anything, "\" really?", sep="")
+#print("Tell me anything")
+#anything = input()
+#print("Hmm... \"", anything, "\" really?", sep="")
+inPhrase = input("Tell me anything")
+print("Your input was \"",inPhrase,"\"", sep = "")
