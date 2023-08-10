@@ -5,14 +5,20 @@
 #   3. otherwise, if it's odd, evaluate a new c0 as 3 × c0 + 1;
 #   4. if c0 ≠ 1, go back to point 2.
 #The hypothesis says that regardless of the initial value of c0, it will always go to 1.
-
-co = int(input("Enter your posetive number"))
-count = 1
-while co !=1:
-    if co % 2:
-        co = 3 * co + 1
-        print(count, "Count", co)
-    else:
-        co = co // 2
-        print(count, "Count", co)
-    count+=1    
+#This code tests the hypothesis for numbers up to a maximum limit given by the user
+max_num = int(input("Enter the limit of the test"))
+co = 2
+while co <= max_num:
+    #co = int(input("Enter your posetive number"))
+    count = 1
+    reSult = co
+    while reSult !=1:
+        if reSult % 2:
+            reSult = 3 * reSult + 1
+            #print("(",reSult,",",count,")")
+        else:
+            reSult = reSult // 2
+            #print("(",reSult,",",count,")")
+        count+=1   
+    print("for ", co, "needed steps ", count)
+    co +=1
