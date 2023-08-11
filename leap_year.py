@@ -27,3 +27,21 @@ elif is_year_leap(in_year) == False:
     print("The year ", in_year, "is ordinary year.")
 else:
     print("Enter a year greater than 1582")
+
+"""
+calculate the days in a given month given the Year and month in number
+"""
+def days_in_month(year, month):
+    # Write your new code here.
+    days_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 31, 31, 30, 31]
+    #Remove invalid month and year from result
+    if year < 1582 or (month < 1 or month > 12):
+        print ("Invalid input")
+        return None
+    else:
+        if is_year_leap(year) and month == 2:
+            return days_in_months[month -1] + 1
+        else:
+            return days_in_months[month -1]
+in_month = int(input("Now enter the month in number: "))
+print("The month ", in_year, "-", in_month , "has ",days_in_month(in_year, in_month)," days")
