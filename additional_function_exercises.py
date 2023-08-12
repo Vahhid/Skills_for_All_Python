@@ -34,10 +34,7 @@ def factorial_function(num):
     elif num < 2:
         return 1
     else:
-        factorial_value = 1
-        for i in range(1, num+1):
-            factorial_value *= i
-        return factorial_value
+        return num * factorial_function(num-1)
 
 for n in range(1, 6): # testing
     print(n, factorial_function(n))
