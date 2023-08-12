@@ -36,5 +36,16 @@ def factorial_function(num):
     else:
         return num * factorial_function(num-1)
 
-for n in range(1, 6): # testing
-    print(n, factorial_function(n))
+#for n in range(1, 6): # testing
+#    print(n, factorial_function(n))
+
+def fibbonacie_number(num):
+    if num < 1:
+        return None
+    elif num < 3:
+        return 1
+    else:
+        return fibbonacie_number(num - 1) + fibbonacie_number(num -2)
+for n in range(1, 10): # testing
+    print(n, "->", fibbonacie_number(n))
+    
