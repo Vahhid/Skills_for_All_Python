@@ -45,3 +45,28 @@ def days_in_month(year, month):
             return days_in_months[month -1]
 in_month = int(input("Now enter the month in number: "))
 print("The month ", in_year, "-", in_month , "has ",days_in_month(in_year, in_month)," days")
+"""
+A function to determine the day of the year given the day of the month
+Test cases for checking this fucntion
+"""
+def day_of_year(year, month, day):
+    # Write your new code here.
+    #Check for invalid date
+    year_day = 0
+    if days_in_month(year, month) < day:
+        print("Enter a valid date")
+        year_day = None
+    elif month > 1:
+        for i in range(1, month):
+            #print(i)
+            year_day += days_in_month(year, i)
+            #print(days_in_month(year, i), "is days in month", i," and sum", year_day)
+    year_day += day
+    return year_day
+#test cases 1900 is ordinary 2000 is leap year
+
+print(day_of_year(2000,1,31) == 31)
+print(day_of_year(2000,12,31) == 366)
+
+print(day_of_year(1900,1,31) == 31)
+print(day_of_year(1900,12,31) == 365)
