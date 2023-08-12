@@ -25,6 +25,19 @@ def area_triangle (a, b, c):
         print("This is not a tringle")
         return None  
 
-print("Area of 1, 1, 4 is?", area_triangle(1, 1, 4))
-print("Area of 1, 1, 1 is?", area_triangle(1, 1, 1))
-print("Area of 3, 4, 5 is?", area_triangle(3, 4, 5))
+#print("Area of 1, 1, 4 is?", area_triangle(1, 1, 4))
+#print("Area of 1, 1, 1 is?", area_triangle(1, 1, 1))
+#print("Area of 3, 4, 5 is?", area_triangle(3, 4, 5))
+def factorial_function(num):
+    if num < 0:
+        return None
+    elif num < 2:
+        return 1
+    else:
+        factorial_value = 1
+        for i in range(1, num+1):
+            factorial_value *= i
+        return factorial_value
+
+for n in range(1, 6): # testing
+    print(n, factorial_function(n))
