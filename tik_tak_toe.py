@@ -20,12 +20,34 @@ def display_board(board):
     print("\n" *2)
 
 
-"""
+
 def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
     # checks the input, and updates the board according to the user's decision.
+    message = "Enter your move unoccupied location are: \n" \
+        +str(make_list_of_free_fields(board))
+    user_move = int(input(message))
+    if user_move in make_list_of_free_fields(board):
+        #find the indexs of the valid selection and update the piece matrix with "O"
+        if user_move < 4:
+            i = 0
+            j = user_move - 1
+        elif user_move < 7:
+            i = 1
+            j = user_move - 4
+        else:
+            i = 2
+            j = user_move - 7
+    #check of the index locations
+    #print("The index selected is ", i, " , ", j)
+     
+    board[i][j] = "O"
+    moves.append(board)
+    display_board(moves[-1])
 
-"""
+
+
+
 def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares; 
     # the list consists of tuples, while each tuple is a pair of row and column numbers.
@@ -65,4 +87,4 @@ moves.append(next_move)
 display_board(moves[-1])
 #print("Your turn. You can choose between the following "\
 # ,make_list_of_free_fields(moves[-1]))
-print(make_list_of_free_fields(moves[-1]))
+enter_move(moves[-1])
