@@ -25,12 +25,19 @@ def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
     # checks the input, and updates the board according to the user's decision.
 
-
+"""
 def make_list_of_free_fields(board):
     # The function browses the board and builds a list of all the free squares; 
     # the list consists of tuples, while each tuple is a pair of row and column numbers.
+    legal_moves = ()
+    for i in range(3):
+        for j in range(3):
+            if type(board[i][j]) is int:
+                legal_moves += board[i][j],
+    return legal_moves
+ 
 
-
+"""
 def victory_for(board, sign):
     # The function analyzes the board's status in order to check if 
     # the player using 'O's or 'X's has won the game
@@ -56,3 +63,6 @@ next_move = moves[0]
 next_move[1][1] = "X"
 moves.append(next_move)
 display_board(moves[-1])
+#print("Your turn. You can choose between the following "\
+# ,make_list_of_free_fields(moves[-1]))
+print(make_list_of_free_fields(moves[-1]))
