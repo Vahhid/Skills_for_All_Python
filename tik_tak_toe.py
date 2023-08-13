@@ -20,15 +20,6 @@ def display_board(board):
     print("\n" *2)
 
 
-
-
-    
-
-
-   
-
-
-
 """
 def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
@@ -59,3 +50,9 @@ moves = [start_board]
 #Display an empy board
 print("\n The empty board is ...\n")
 display_board(start_board)
+print("First move belongs to the computer. \n")
+#Start by taking the middle position in the first move of the computer
+next_move = moves[0]
+next_move[1][1] = "X"
+moves.append(next_move)
+display_board(moves[-1])
