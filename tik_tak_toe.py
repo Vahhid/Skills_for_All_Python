@@ -1,22 +1,6 @@
 def display_board(board):
-    # The function accepts one parameter containing the board's current status
-    # and prints it out to the console.
-    def vertical():
-        print("|", " " *6,"|", " " *6,"|", " " *6,"|")
-    def horizontal():
-        print("+","-" * 6,"+","-" * 6,"+","-" * 6,"+")
-    def vertical_with_piece(x,y,z):
-        print("|", " " *2,x, " " *1,"|"," " *2,y, " " *1,"|"," " *2,z, " " *1,"|")
+    return None
 
-    for i in range(3):
-        horizontal()
-        for z in range(3):
-            if z == 2:
-                vertical_with_piece(board[i][0],board[i][1],board[i][2])
-            vertical()
-        
-    horizontal() 
-    print("\n" *2)
 
 
 
@@ -51,7 +35,7 @@ def enter_move(board):
             print("Please enter a valid move from the list "\
                   ,str(make_list_of_free_fields(board)) )
 
-    display_board(moves[-1])
+    draw_move(moves[-1])
 
 
 
@@ -67,15 +51,33 @@ def make_list_of_free_fields(board):
     return legal_moves
  
 
-"""
+
 def victory_for(board, sign):
     # The function analyzes the board's status in order to check if 
     # the player using 'O's or 'X's has won the game
+    return None
 
 
 def draw_move(board):
     # The function draws the computer's move and updates the board.
-"""
+        # The function accepts one parameter containing the board's current status
+    # and prints it out to the console.
+    def vertical():
+        print("|", " " *6,"|", " " *6,"|", " " *6,"|")
+    def horizontal():
+        print("+","-" * 6,"+","-" * 6,"+","-" * 6,"+")
+    def vertical_with_piece(x,y,z):
+        print("|", " " *2,x, " " *1,"|"," " *2,y, " " *1,"|"," " *2,z, " " *1,"|")
+
+    for i in range(3):
+        horizontal()
+        for z in range(3):
+            if z == 2:
+                vertical_with_piece(board[i][0],board[i][1],board[i][2])
+            vertical()
+        
+    horizontal() 
+    print("\n" *2)
 
 #This is the status of the board before any move to be passed for clearing the board 
 start_board = [[1,2,3],[4,5,6],[7,8,9]]
@@ -86,13 +88,13 @@ moves = [start_board]
 
 #Display an empy board
 print("\n The empty board is ...\n")
-display_board(start_board)
+draw_move(start_board)
 print("First move belongs to the computer. \n")
 #Start by taking the middle position in the first move of the computer
 next_move = moves[0]
 next_move[1][1] = "X"
 moves.append(next_move)
-display_board(moves[-1])
+draw_move(moves[-1])
 #print("Your turn. You can choose between the following "\
 # ,make_list_of_free_fields(moves[-1]))
 enter_move(moves[-1])
