@@ -12,8 +12,7 @@ def display_board(board):
         horizontal()
         for z in range(3):
             if z == 2:
-                vertical_with_piece(board[i][0],board[i][1]\
-                                    ,board[i][2])
+                vertical_with_piece(board[i][0],board[i][1],board[i][2])
             vertical()
         
     horizontal() 
@@ -24,25 +23,34 @@ def display_board(board):
 def enter_move(board):
     # The function accepts the board's current status, asks the user about their move, 
     # checks the input, and updates the board according to the user's decision.
-    message = "Enter your move unoccupied location are: \n" \
-        +str(make_list_of_free_fields(board))
-    user_move = int(input(message))
-    if user_move in make_list_of_free_fields(board):
-        #find the indexs of the valid selection and update the piece matrix with "O"
-        if user_move < 4:
-            i = 0
-            j = user_move - 1
-        elif user_move < 7:
-            i = 1
-            j = user_move - 4
-        else:
-            i = 2
-            j = user_move - 7
-    #check of the index locations
-    #print("The index selected is ", i, " , ", j)
-     
-    board[i][j] = "O"
-    moves.append(board)
+    wrong_user_input = True
+    while wrong_user_input:
+        try:
+            message = "Enter your move unoccupied location are: \n" \
+                +str(make_list_of_free_fields(board))
+            user_move = int(input(message))
+            if user_move in make_list_of_free_fields(board):
+                #find the indexs of the valid selection 
+                # and update the piece matrix with "O"
+                if user_move < 4:
+                    i = 0
+                    j = user_move - 1
+                elif user_move < 7:
+                    i = 1
+                    j = user_move - 4
+                else:
+                    i = 2
+                    j = user_move - 7
+            #check of the index locations
+            #print("The index selected is ", i, " , ", j)
+            
+            board[i][j] = "O"
+            moves.append(board)
+            wrong_user_input = False
+        except:
+            print("Please enter a valid move from the list "\
+                  ,str(make_list_of_free_fields(board)) )
+
     display_board(moves[-1])
 
 
