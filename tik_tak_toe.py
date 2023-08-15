@@ -52,10 +52,27 @@ def make_list_of_free_fields(board):
  
 
 
-def victory_for(board, sign):
+def victory_for(board, sign = "X"):
+    lst = board[-1] 
     # The function analyzes the board's status in order to check if 
     # the player using 'O's or 'X's has won the game
-    return None
+    game_over = False
+    for i in range(3):
+        for j in range(3):
+            if lst[i][j] == sign:
+                if ( i == j):
+                    if ((lst[i][0] == lst[i][1] and lst[i][1] == lst[i][2]) \
+                    or (lst[0][j] == lst[1][j] and lst[1][j] == lst[2][j])) \
+                    or ((lst[0][0] == lst[1][1] and lst[1][1] == lst[2][2]) \
+                    or  (lst[2][0] == lst[1][1] and lst[1][1] == lst[0][2])):    
+                        game_over = True                    
+                else:
+                    if (lst[i][0] == lst[i][1] and lst[i][1] == lst[i][2]) \
+                    or (lst[0][j] == lst[1][j] and lst[1][j] == lst[2][j]):
+                        game_over = True
+                        
+    
+    return game_over, sign
 
 
 def draw_move(board):
@@ -98,3 +115,7 @@ draw_move(moves[-1])
 #print("Your turn. You can choose between the following "\
 # ,make_list_of_free_fields(moves[-1]))
 enter_move(moves[-1])
+
+
+
+
