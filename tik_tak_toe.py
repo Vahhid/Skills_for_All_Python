@@ -2,16 +2,16 @@ def display_board(board):
     # The function accepts one parameter containing the board's current status
     # and prints it out to the console.
     def vertical():
-        print("|", " " *20,"|", " " *20,"|", " " *20,"|")
+        print("|", " " *6,"|", " " *6,"|", " " *6,"|")
     def horizontal():
-        print("+","-" * 20,"+","-" * 20,"+","-" * 20,"+")
+        print("+","-" * 6,"+","-" * 6,"+","-" * 6,"+")
     def vertical_with_piece(x,y,z):
-        print("|", " " *7,x, " " *10,"|"," " *7,y, " " *10,"|"," " *7,z, " " *10,"|")
+        print("|", " " *2,x, " " *1,"|"," " *2,y, " " *1,"|"," " *2,z, " " *1,"|")
 
     for i in range(3):
         horizontal()
-        for z in range(11):
-            if z == 6:
+        for z in range(3):
+            if z == 2:
                 vertical_with_piece(board[i][0],board[i][1]\
                                     ,board[i][2])
             vertical()
