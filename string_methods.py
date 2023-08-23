@@ -19,6 +19,36 @@ myNum = 123
 #print("123".isalnum())
 #print("Gong".isalnum())
 #print("123Gong".isalnum())
-print("123".islower())
-print("gong".islower())
-print("gong123".islower())
+#print("123".islower())
+#print("gong".islower())
+def mysplit(strng):
+    #
+    # put your code here
+    #
+    i = 0
+    spaces = []
+    spli = []
+    for s in strng:
+        if s == " ":
+            spaces.append(i)
+        i += 1
+    if spaces == [] or strng.isspace():
+        return []
+    else:
+        spli.append(strng[0:spaces[0]].strip())
+        for i in range(len(spaces)-1):
+            spli.append(strng[spaces[i]:spaces[i+1]].strip())
+        spli.append(strng[spaces[-1]:].strip())
+        return spli
+
+
+
+    
+
+
+print(mysplit("To be or not to be, that is the question"))
+print(mysplit("To be or not to be,that is the question"))
+print(mysplit("   "))
+print(mysplit(" abc "))
+print(mysplit(""))
+#print("gong123".islower())
