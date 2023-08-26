@@ -45,10 +45,30 @@ def mysplit(strng):
 
     
 
-
+"""
 print(mysplit("To be or not to be, that is the question"))
 print(mysplit("To be or not to be,that is the question"))
 print(mysplit("   "))
 print(mysplit(" abc "))
 print(mysplit(""))
+"""
 #print("gong123".islower())
+def vertical(side):
+    endStr = ""
+    if side == 1:
+        endStr ="#"+6*" "+"#"
+    elif side == 2:
+        endStr =" "+6*" "+"#"
+    elif side == 3:
+        endStr ="#"+6*" "+" "
+    return endStr
+print(1)
+for i in range(3):
+    print(vertical(1))
+print(2)
+for i in range(3):
+    print(vertical(2))
+print(3)
+for i in range(3):
+    print(vertical(3))
+
