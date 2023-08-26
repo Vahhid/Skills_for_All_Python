@@ -1,125 +1,43 @@
 #This program will request the user to provide a number and display as a seven segment
-#decimals = list(range(10))
-#print(decimals)
+decimals = list(range(10))
+print(decimals)
 #Function for displaying individual decimals
 def draw(z):
     def horizontal(side):
         if side == 1:
-            print(8*"#")
+            return 8*"#"
         elif side == 2:
-            print(" "," "*4 , "#")
+            return " "*7 + "#"
         elif side == 3:
-            print("#"," "*4 , "#")
+            return "#"+" "*6 + "#"
     def vertical(side):
+        endStr = ""
         if side == 1:
-            for i in range(3):
-                print("#",4*" ","#")
+            endStr ="#"+6*" "+"#"
         elif side == 2:
-            for i in range(3):
-                print(" ",4*" ","#")
+            endStr =" "+6*" "+"#"
         elif side == 3:
-            for i in range(3):
-                print("#",4*" "," ")
+            endStr ="#"+6*" "+" "
+        return endStr
     mp = [[1,1,3,1,1], [2,2,2,2,2], [1,2,1,3,1], [1,2,1,2,1], [3,1,1,2,2], \
-            [1,3,1,2,1], [1,2,1,1,1], [1,2,2,2,2], [1,1,1,1,1], [1,1,1,2,2] ]  
-    horizontal(mp[z][0])
-    vertical(mp[z][1])
-    horizontal(mp[z][2])
-    vertical(mp[z][3])
-    horizontal(mp[z][4])
-    print(" ")
+            [1,3,1,2,1], [1,2,1,1,1], [1,2,2,2,2], [1,1,1,1,1], [1,1,1,2,2] ] 
+    for i in range(len(z)):
+        print(horizontal(mp[z[i]][0]), end= "   ")
+    print("")
+    for j in range(3):
+        for i in range(len(z)):
+            print(vertical(mp[z[i]][1]), end= "   ")
+        print("")
     
-    """
-    if decimal == 1:
-        horizontal("b")
-        vertical("y")
-        horizontal("b")
-        vertical("y")
-        horizontal("b")
-        print(" ")
-    
-        
-    elif decimal == 0:
-        horizontal("a")
-        vertical("x")
-        horizontal("c")
-        vertical("x")
-        horizontal("a")
-        print(" ")
-    
-      
-    elif decimal == 2:
-        horizontal("a")
-        vertical("y")
-        horizontal("a")
-        vertical("z")
-        horizontal("a")
-        print(" ")
-        [1,2,1,3,1]
-      
+    for i in range(len(z)):
+        print(horizontal(mp[z[i]][2]), end= "   ")
+    print("")
+    for j in range(3):
+        for i in range(len(z)):
+            print(vertical(mp[z[i]][3]), end= "   ")
+        print("")
+    for i in range(len(z)):
+        print(horizontal(mp[z[i]][4]), end= "   ")
 
-    elif decimal == 3:
-        horizontal("a")
-        vertical("y")
-        horizontal("a")
-        vertical("y")
-        horizontal("a")
-        print(" ")
-        
-
-    elif decimal == 4:
-        horizontal("c")
-        vertical("x")
-        horizontal("a")
-        vertical("y")
-        horizontal("b")
-        print(" ")
-        
-    elif decimal == 5:
-        horizontal("a")
-        vertical("z")
-        horizontal("a")
-        vertical("y")
-        horizontal("a")
-        print(" ")
-        
-    elif decimal == 6:
-        horizontal("a")
-        vertical("y")
-        horizontal("a")
-        vertical("x")
-        horizontal("a")
-        print(" ")
-        
-    elif decimal == 7:
-        horizontal("a")
-        vertical("y")
-        horizontal("b")
-        vertical("y")
-        horizontal("b")
-        print(" ")
-        
-    
-    elif decimal == 8:
-        horizontal("a")
-        vertical("x")
-        horizontal("a")
-        vertical("x")
-        horizontal("a")
-        print(" ")
-        
-    elif decimal == 9:
-        horizontal("a")
-        vertical("x")
-        horizontal("a")
-        vertical("y")
-        horizontal("b")
-        print(" ")
-"""
-for i in range(10):
-    print(i,"/n")
-    draw(i)        
-    
-
-
+draw(decimals)
 
