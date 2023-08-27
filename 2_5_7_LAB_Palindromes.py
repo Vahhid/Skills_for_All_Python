@@ -18,6 +18,16 @@ def check_for_palidrome(txt):
         if t.isalpha():
             lst.append(t)
     return lst == list(reversed(lst))
+def check_for_palidrome_2(txt):
+    txt = txt.lower()
+    txt_no_space = ""
+    txt_no_space_reversed = ""
+    for t in txt:
+        if t.isalpha():
+            txt_no_space +=t
+            txt_no_space_reversed = t + txt_no_space_reversed
+    return txt_no_space == txt_no_space_reversed
 
 print(check_for_palidrome(text))
+print(check_for_palidrome_2(text))
  
