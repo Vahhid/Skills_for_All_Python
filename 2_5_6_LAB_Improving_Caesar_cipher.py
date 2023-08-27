@@ -11,17 +11,9 @@ Z is number 90
 a is number 97
 z is number 122
 """
-"""
-text = input("Enter your message")
-shift_is_invalid = True
-while shift_is_invalid:
-    try:
-        shift_no = int(input("Enter the shift number i.e. integer from 1 to 25"))
-        if shift_no > 0 and shift_no < 26:
-            shift_is_invalid = False
-    except:
-        print("Please enter an integer value between 1 and 26")
-"""
+
+
+
 def improved_ceasar(ch, shift):
     if (ord(ch) >= 65 and ord(ch) <= 90): 
         if ord(ch) + shift <=90:
@@ -40,7 +32,20 @@ def cipher(phrase,offset):
     for j in phrase:
         cifer +=improved_ceasar(j,offset)
     return cifer
-print("")
+text = input("Enter your message")
+shift_is_invalid = True
+while shift_is_invalid:
+    try:
+        shift_no = int(input("Enter the shift number i.e. integer from 1 to 25"))
+        if shift_no > 0 and shift_no < 26:
+            shift_is_invalid = False
+    except:
+        print("Please enter an integer value between 1 and 26")
+print("The encrypted text is: ")
+print(cipher(text, shift_no))
+
+
+"""
 #Test letters
 my_list_capital = list(range(65,91)) 
 my_list_small = list(range(97,123))
@@ -60,13 +65,5 @@ print(capital_test)
 print("capital shifted 3 is \n ", cipher(capital_test,3))
 print(small_test)
 print("Small shifted 1 is \n ", cipher(small_test,1))
-
-
-
-
-
-
-
-
 #print(latin_alph)
-
+"""
