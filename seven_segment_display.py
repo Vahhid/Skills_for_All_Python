@@ -1,6 +1,6 @@
 #This program will request the user to provide a number and display as a seven segment
 decimals = list(range(10))
-print(decimals)
+print(decimals.reverse())
 #Function for displaying individual decimals
 def draw(z):
     def horizontal(side):
@@ -20,7 +20,7 @@ def draw(z):
             endStr ="#"+6*" "+" "
         return endStr
     mp = [[1,1,3,1,1], [2,2,2,2,2], [1,2,1,3,1], [1,2,1,2,1], [3,1,1,2,2], \
-            [1,3,1,2,1], [1,2,1,1,1], [1,2,2,2,2], [1,1,1,1,1], [1,1,1,2,2] ] 
+            [1,3,1,2,1], [1,3,1,1,1], [1,2,2,2,2], [1,1,1,1,1], [1,1,1,2,2] ] 
     for i in range(len(z)):
         print(horizontal(mp[z[i]][0]), end= "   ")
     print("")
