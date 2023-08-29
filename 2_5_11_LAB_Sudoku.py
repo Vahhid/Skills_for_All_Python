@@ -14,3 +14,22 @@ outputs Yes if the Sudoku is valid, and No otherwise.
 Test your code using the data we've provided.
 
 """
+soduk = []
+
+valid_out = list(range(1,9))
+count = 0
+while count < 9:
+    line = []
+    outString = "Enter your soduk row ", count+1," \n"
+    row = input(outString)
+    for i in range(9):
+        try:
+            line.append(int(row[i]))
+        except:
+            print("Please enter valid row")
+            break
+    count +=1
+    soduk.append(line)
+
+print(soduk)
+print(valid_out)
