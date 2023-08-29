@@ -20,7 +20,7 @@ valid_out = list(range(1,9))
 count = 0
 while count < 9:
     line = []
-    outString = "Enter your soduk row ", count+1," \n"
+    outString = "Enter your soduk row "+ str(count+1) + " \n"
     row = input(outString)
     for i in range(9):
         try:
