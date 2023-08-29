@@ -90,8 +90,20 @@ def str_to_soduk(test1Str1):
     return sodukk1
 
 gong1 = str_to_soduk(inOne)
-print("________________________________________")
 gong2 = str_to_soduk(inTwo)
+valid_out = list(range(1,9))
+print(valid_out)
+def check_rows(sodu):
+    return None
+
+def check_columns(sodu):
+    return None
+
+def check_sqrs(sodu):
+    return None
+
+
+
 
 
 
