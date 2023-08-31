@@ -13,28 +13,6 @@ reads 9 rows of the Sudoku, each containing 9 digits (check carefully if the dat
 outputs Yes if the Sudoku is valid, and No otherwise.
 Test your code using the data we've provided.
 
-yes:
-295743861
-431865927
-876192543
-387459216
-612387495
-549216738
-763524189
-928671354
-154938672
-
-no: 
-195743862
-431865927
-876192543
-387459216
-612387495
-549216738
-763524189
-928671354
-254938671
-
 """
 """
 soduk = []
@@ -91,16 +69,54 @@ def str_to_soduk(test1Str1):
 
 gong1 = str_to_soduk(inOne)
 gong2 = str_to_soduk(inTwo)
-valid_out = list(range(1,9))
-print(valid_out)
+valid_out = list(range(1,10))
+#print(valid_out)
+#print("Valid")
 def check_rows(sodu):
-    return None
+    for i in range(9):
+        #print(sorted(sodu[i]))
+        if sorted(sodu[i]) != valid_out:
+            return False
+    return True
 
 def check_columns(sodu):
-    return None
+    for i in range(9):
+        chk = []
+        for j in range(9):
+            chk.append(sodu[j][i])
+        #print(sorted(chk))
+        if sorted(chk) != valid_out:
+            return False    
+    return True
 
 def check_sqrs(sodu):
-    return None
+    start_1 = 0
+    start_2 = 0
+    count = 0
+    re = []
+    for z in range(3):
+        for k in range(3):    
+                
+            row = []    
+            for j in range(start_2, start_2+3):    
+                for i in range(start_1, start_1+3):
+                    row.append(sodu[j][i])
+            re.append(row)
+            start_2 +=3
+        start_2 = 0
+        start_1 +=3
+    for x in range(len(re)):
+        if sorted(re[x]) != valid_out:
+            return False
+
+               
+    return True
+
+def all_check(sodu):
+    return  check_rows(sodu) and check_columns(sodu) and check_sqrs(sodu)
+print("Gong")
+print(all_check(gong1))
+print(all_check(gong2))
 
 
 
