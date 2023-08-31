@@ -14,6 +14,8 @@ def read_int(prompt, min, max):
     #
     # Write your code here.
     #
+    v = input(prompt)
+    return v
 
 
 v = read_int("Enter a number from -10 to 10: ", -10, 10)
