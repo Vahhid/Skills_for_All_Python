@@ -42,6 +42,8 @@ class CountingStack(Stack):
 
     def pop(self):
         # Do pop and update the counter.
+        self.__countPop +=1
+        Stack.pop(self)
         
 	
 
