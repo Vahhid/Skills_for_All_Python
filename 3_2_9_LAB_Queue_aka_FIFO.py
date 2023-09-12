@@ -28,27 +28,25 @@ False
 Queue error
 
 """
+"""
 class QueueError(???):  # Choose base class for the new exception.
     #
     #  Write code here
     #
-
+"""
 
 class Queue:
     def __init__(self):
-        #
         # Write code here
-        #
+        self.__lst = []
 
     def put(self, elem):
-        #
         # Write code here
-        #
+        self.__lst.append(elem)
 
     def get(self):
-        #
         # Write code here
-        #
+        
 
 
 que = Queue()
