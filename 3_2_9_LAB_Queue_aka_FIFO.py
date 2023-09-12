@@ -28,12 +28,13 @@ False
 Queue error
 
 """
-"""
-class QueueError(???):  # Choose base class for the new exception.
-    #
-    #  Write code here
-    #
-"""
+
+class QueueError(Queue):  # Choose base class for the new exception.
+    def __init__(self):
+        Queue.__init__(self)
+    def chk_empty(self):
+        return len(self.__lst) > 0
+
 
 class Queue:
     def __init__(self):
@@ -59,11 +60,11 @@ que.put(False)
 #print(que.get())
 #print(que.get())
 
-"""
+
 try:
     for i in range(4):
         print(que.get())
 except:
     print("Queue error")
     
-"""    
+    
