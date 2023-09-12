@@ -46,16 +46,24 @@ class Queue:
 
     def get(self):
         # Write code here
-        
+        toServe = self.__lst[0]
+        del self.__lst[0]
+        return toServe
 
 
 que = Queue()
 que.put(1)
 que.put("dog")
 que.put(False)
+#print(que.get())
+#print(que.get())
+#print(que.get())
+
+"""
 try:
     for i in range(4):
         print(que.get())
 except:
     print("Queue error")
     
+"""    
