@@ -31,23 +31,28 @@ Expected output
 Mon
 Tue
 Sun
-Sorry, I can't serve your request.
+
 
 """
 class WeekDayError(Exception):
-    pass
+    if Exception == WeekDayError:
+        print("Sorry, I can't serve your request.")
 	
 
 class Weeker:
-    #
+    
     # Write code here.
     #
 
     def __init__(self, day):
-        #
-        # Write code here.
-        #
+        lst = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        if day in lst:
+            day_index = lst.index(day)
+            print(day_index)
+        else:
+            raise WeekDayError
 
+"""
     def __str__(self):
         #
         # Write code here.
@@ -62,8 +67,11 @@ class Weeker:
         #
         # Write code here.
         #
-
-
+"""
+myDay = Weeker("Mon")
+myDay = Weeker("Sun")
+myDay = Weeker("Gong")
+"""
 try:
     weekday = Weeker('Mon')
     print(weekday)
@@ -74,4 +82,4 @@ try:
     weekday = Weeker('Monday')
 except WeekDayError:
     print("Sorry, I can't serve your request.")
-    
+"""
